@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GGUF Editor</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+<div id="app">
+
+  <!-- Top bar -->
+  <div id="topbar">
+    <span class="logo">GGUF Editor <span>for Chrome</span></span>
+
+    <button id="file-btn" title="Open a .gguf file">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+      </svg>
+      Open File
+    </button>
+    <!-- hidden file input -->
+    <input type="file" id="file-input" accept=".gguf" style="display:none" />
+
+    <span id="file-label">No file selected</span>
+
+    <button id="save-btn" class="btn btn-primary" style="font-size:12px;padding:5px 12px;" disabled>
+      Save Changes
+    </button>
+
+    <button id="theme-btn" title="Toggle dark/light mode">
+      <svg id="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg id="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Toolbar (search) -->
+  <div id="toolbar">
+    <input id="search-input" type="text" placeholder="Search metadata keys, values, tensor names…" />
+    <button class="btn" id="clear-search-btn">Clear</button>
+  </div>
+
+  <!-- Error banner -->
+  <div id="error-banner">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/>
+      <line x1="12" y1="16" x2="12.01" y2="16"/>
+    </svg>
+    <span id="error-text"></span>
+  </div>
+
+  <!-- Main content -->
+  <div id="content">
+
+    <!-- Landing (shown when no file loaded) -->
+    <div id="landing">
+      <div class="icon">📦</div>
+      <h2>Open a GGUF file to get started</h2>
+      <p>Select a <code>.gguf</code> model file to inspect and edit its metadata and tensor information.</p>
+      <button class="btn btn-primary open-btn" id="landing-open-btn">Choose File…</button>
+    </div>
+
+    <!-- Loading indicator -->
+    <div id="loading">
+      <div class="spinner"></div>
+      <span>Parsing GGUF file…</span>
+    </div>
+
+    <!-- Data view (hidden until file loaded) -->
+    <div id="data-view" style="display:none">
+
+      <!-- Stats bar -->
+      <div id="stats">
+        <span>Version: <strong id="stat-version">—</strong></span>
+        <span>Metadata: <strong id="stat-meta">—</strong></span>
+        <span>Tensors: <strong id="stat-tensors">—</strong></span>
+        <span>File size: <strong id="stat-size">—</strong></span>
+        <span class="version-badge" id="stat-gguf-ver">GGUF v?</span>
+      </div>
+
+      <!-- Metadata section -->
+      <div class="section-header">
+        <h2>Metadata</h2>
+        <span class="count" id="meta-count">0</span>
+      </div>
+      <table id="meta-table">
+        <thead>
+          <tr>
+            <th style="width:240px">Key</th>
+            <th>Value</th>
+            <th style="width:70px">Type</th>
+          </tr>
+        </thead>
+        <tbody id="meta-body"></tbody>
+      </table>
+      <div id="meta-empty" class="no-results" style="display:none">No metadata matches your search.</div>
+
+      <!-- Tensors section -->
+      <div class="section-header">
+        <h2>Tensors</h2>
+        <span class="count" id="tensor-count">0</span>
+      </div>
+      <table id="tensor-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th style="width:160px">Shape</th>
+            <th style="width:90px">Precision</th>
+            <th style="width:60px">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="tensor-body"></tbody>
+      </table>
+      <div id="tensor-empty" class="no-results" style="display:none">No tensors match your search.</div>
+
+    </div><!-- /data-view -->
+  </div><!-- /content -->
+</div><!-- /app -->
+
+<div id="save-toast">Changes saved!</div>
+
+<script src="gguf-parser.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>
