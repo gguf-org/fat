@@ -20,6 +20,5 @@ edge://extensions/
 - click `Load unpacked` and select this repo clone
 
 ## or an easy way, search for it from your browser extension marketplace/store
-- chrome [gguf](https://chromewebstore.google.com/detail/gguf/holnhkpcfodagjnlkkoiaamidblmmlba)
-- chrome [fat](https://chromewebstore.google.com/detail/fat/hbndjojdmfeljamfmoijeaeabiflchbh)
-- edge [fat](https://microsoftedge.microsoft.com/addons/detail/fat/pfheocmngehhcomcdoimpbhphjodbinl)
+
+for examples, chrome: [gguf](https://chromewebstore.google.com/detail/gguf/holnhkpcfodagjnlkkoiaamidblmmlba), [fat](https://chromewebstore.google.com/detail/fat/hbndjojdmfeljamfmoijeaeabiflchbh); edge: [fat](https://microsoftedge.microsoft.com/addons/detail/fat/pfheocmngehhcomcdoimpbhphjodbinl); and etc.
