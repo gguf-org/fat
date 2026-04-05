@@ -1,4 +1,4 @@
-# fat
+# fatfat
 [<img src="https://raw.githubusercontent.com/gguf-org/pig/master/pig.gif" width="128" height="128">](https://github.com/gguf-org/fat)
 
 view, inspect and edit GGUF model file metadata and tensor info directly in your browse even without internet (offline)
