@@ -26,4 +26,4 @@ brave://extensions/
 
 ## or an easy way, search for it from your browser extension marketplace/store
 
-for examples, chrome: [gguf](https://chromewebstore.google.com/detail/gguf/holnhkpcfodagjnlkkoiaamidblmmlba), [fat](https://chromewebstore.google.com/detail/fat/hbndjojdmfeljamfmoijeaeabiflchbh); firefox: [gguf](https://addons.mozilla.org/en-US/firefox/addon/gguf/), [fat](https://addons.mozilla.org/en-US/firefox/addon/fat/); edge: [gguf](https://microsoftedge.microsoft.com/addons/detail/gguf/miocohfkpjjakldilpbhldjcijpaeoek), [fat](https://microsoftedge.microsoft.com/addons/detail/fat/pfheocmngehhcomcdoimpbhphjodbinl), and etc.
+for examples, chrome: [gguf](https://chromewebstore.google.com/detail/gguf/holnhkpcfodagjnlkkoiaamidblmmlba), [fat](https://chromewebstore.google.com/detail/fat/hbndjojdmfeljamfmoijeaeabiflchbh); edge: [gguf](https://microsoftedge.microsoft.com/addons/detail/gguf/miocohfkpjjakldilpbhldjcijpaeoek), [fat](https://microsoftedge.microsoft.com/addons/detail/fat/pfheocmngehhcomcdoimpbhphjodbinl); firefox: [gguf](https://addons.mozilla.org/en-US/firefox/addon/gguf/), [fat](https://addons.mozilla.org/en-US/firefox/addon/fat/), and etc.
