@@ -15,6 +15,11 @@ copy the link below to your edge browser
 edge://extensions/
 ```
 
+copy the link below to your brave browser
+```
+brave://extensions/
+```
+
 ## sideload to your browser as an extension
 - turn on `Developer mode`
 - click `Load unpacked` and select this repo clone
