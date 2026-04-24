@@ -1,7 +1,7 @@
 # fatfat
 [<img src="https://raw.githubusercontent.com/gguf-org/pig/master/pig.gif" width="128" height="128">](https://github.com/gguf-org/fat)
 
-view, inspect and edit GGUF model file metadata and tensor info directly in your browse even without internet (offline)
+view, inspect and edit GGUF model file metadata and tensor info directly in your browser even without internet (offline)
 
 ## choose your browser
 
@@ -27,3 +27,4 @@ brave://extensions/
 ## or an easy way, search for it from your browser extension marketplace/store
 
 for examples, chrome: [gguf](https://chromewebstore.google.com/detail/gguf/holnhkpcfodagjnlkkoiaamidblmmlba), [fat](https://chromewebstore.google.com/detail/fat/hbndjojdmfeljamfmoijeaeabiflchbh); edge: [gguf](https://microsoftedge.microsoft.com/addons/detail/gguf/miocohfkpjjakldilpbhldjcijpaeoek), [fat](https://microsoftedge.microsoft.com/addons/detail/fat/pfheocmngehhcomcdoimpbhphjodbinl); firefox: [gguf](https://addons.mozilla.org/en-US/firefox/addon/gguf/), [fat](https://addons.mozilla.org/en-US/firefox/addon/fat/), and etc.
+## or opt the desktop app under release
